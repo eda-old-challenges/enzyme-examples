@@ -1,7 +1,7 @@
 import test from 'tape'
 import React from 'react'
 import sinon from 'sinon'
-import { mount, shallow } from 'enzyme'
+import { mount, shallow, render } from 'enzyme'
 
 import List from '../client/components/List'
 
@@ -30,6 +30,20 @@ test('<List /> calls moreWombatInfo when item clicked', t => {
   const li = wrapper.find('li').first()
   li.simulate('click')
   const actual = spy.callCount
+
+  // Assert
+  t.equal(actual, expected)
+  t.end()
+})
+
+test('<List /> includes a <Notes /> component', t => {
+  // Arrange
+  const wombats = ['herschel']
+  const expected = true
+
+  // Act
+  const wrapper = render(<List things={wombats} />)
+  const actual = wrapper.find('div.notes').length > 0
 
   // Assert
   t.equal(actual, expected)
