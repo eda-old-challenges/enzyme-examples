@@ -6,9 +6,6 @@ module.exports = {
     path: __dirname,
     filename: './test/bundle.js'
   },
-  externals: {
-    cheerio: "window"
-  },
   module: {
     // Handle an issue with a require(expr) in colors.js
     exprContextRegExp: /$^/,
@@ -18,10 +15,11 @@ module.exports = {
     { 
       test: /\.jsx?$/, 
       exclude: /node_modules/, 
-      loader: 'babel-loader', 
-      query: { 
-        presets: ['react', 'es2015'] 
-      } 
+      loader: 'babel-loader' 
+    },
+    { 
+      test: /\.json$/, 
+      loader: 'json-loader' 
     }
     ]
   },
@@ -34,6 +32,6 @@ module.exports = {
     new webpack.IgnorePlugin(/react\/lib\/ExecutionEnvironment/)
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
   }
 }
