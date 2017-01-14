@@ -4,7 +4,7 @@
   "description": "Simple Enzyme testing of React components",
   "repository": "https://github.com/dev-academy-challenges/enzyme-examples",
   "scripts": {
-    "dev": "webpack-dev-server --content-base public/ --hot --inline",
+    "start": "webpack-dev-server --content-base public/ --hot --inline",
     "test": "webpack --config test.config.js && cat test/bundle.js | tape-run | tap-spec",
     "watch": "nodemon -e js,jsx -x npm test"
   },
