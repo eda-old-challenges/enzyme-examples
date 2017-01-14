@@ -1,0 +1,38 @@
+{
+  "name": "enzyme-examples",
+  "version": "0.1.0",
+  "description": "Simple Enzyme testing of React components",
+  "repository": "https://github.com/dev-academy-challenges/enzyme-examples",
+  "scripts": {
+    "dev": "webpack-dev-server --content-base public/ --hot --inline",
+    "test": "webpack --config test.config.js && cat test/bundle.js | tape-run | tap-spec",
+    "watch": "nodemon -e js,jsx -x npm test"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "author": "EDA",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "enzyme": "^2.7.0",
+    "jsx-loader": "^0.13.2",
+    "nodemon": "^1.11.0",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "sinon": "^2.0.0-pre.5",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3",
+    "tape-run": "^2.1.5",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
