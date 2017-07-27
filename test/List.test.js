@@ -1,4 +1,4 @@
-import test from 'tape'
+import test from 'ava'
 import React from 'react'
 import sinon from 'sinon'
 import { mount, shallow, render } from 'enzyme'
@@ -15,8 +15,7 @@ test('<List /> creates one item for each wombat', t => {
   const actual = wrapper.find('li').length
 
   // Assert
-  t.equal(actual, expected)
-  t.end()
+  t.is(actual, expected)
 })
 
 test('<List /> calls moreWombatInfo when item clicked', t => {
@@ -32,8 +31,7 @@ test('<List /> calls moreWombatInfo when item clicked', t => {
   const actual = spy.callCount
 
   // Assert
-  t.equal(actual, expected)
-  t.end()
+  t.is(actual, expected)
 })
 
 test('<List /> includes a <Notes /> component', t => {
@@ -46,6 +44,5 @@ test('<List /> includes a <Notes /> component', t => {
   const actual = wrapper.find('div.notes').length > 0
 
   // Assert
-  t.equal(actual, expected)
-  t.end()
+  t.is(actual, expected)
 })
