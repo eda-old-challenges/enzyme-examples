@@ -2,7 +2,7 @@ import React from 'react'
 
 import Notes from './Notes'
 
-export default function ({ moreWombatInfo, things }) {
+const List = ({moreWombatInfo, things}) => {
   return (
     <div>
       {things.map((thing, i) => (
@@ -12,3 +12,5 @@ export default function ({ moreWombatInfo, things }) {
     </div>
   )
 }
+
+export default List

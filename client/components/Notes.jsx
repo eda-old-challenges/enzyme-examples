@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function ({ text }) {
+const Notes = ({text}) => {
   return (
     <div className="notes">
       {text}
     </div>
   )
 }
+
+export default Notes

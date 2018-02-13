@@ -1,11 +1,14 @@
-import test from 'ava'
+/* global jest test expect */
 import React from 'react'
-import sinon from 'sinon'
-import { mount, shallow, render } from 'enzyme'
+import {configure, mount, shallow, render} from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 
+import './setup-env'
 import List from '../client/components/List'
 
-test('<List /> creates one item for each wombat', t => {
+configure({adapter: new Adapter()})
+
+test('<List /> creates one item for each wombat', () => {
   // Arrange
   const wombats = ['herschel', 'gertrude', 'jemima']
   const expected = 3
@@ -15,12 +18,12 @@ test('<List /> creates one item for each wombat', t => {
   const actual = wrapper.find('li').length
 
   // Assert
-  t.is(actual, expected)
+  expect(actual).toBe(expected)
 })
 
-test('<List /> calls moreWombatInfo when item clicked', t => {
+test('<List /> calls moreWombatInfo when item clicked', () => {
   // Arrange
-  const spy = sinon.spy()
+  const spy = jest.fn()
   const wombats = ['herschel']
   const expected = 1
 
@@ -28,13 +31,13 @@ test('<List /> calls moreWombatInfo when item clicked', t => {
   const wrapper = mount(<List things={wombats} moreWombatInfo={spy} />)
   const li = wrapper.find('li').first()
   li.simulate('click')
-  const actual = spy.callCount
+  const actual = spy.mock.calls.length
 
   // Assert
-  t.is(actual, expected)
+  expect(actual).toBe(expected)
 })
 
-test('<List /> includes a <Notes /> component', t => {
+test('<List /> includes a <Notes /> component', () => {
   // Arrange
   const wombats = ['herschel']
   const expected = true
@@ -44,5 +47,5 @@ test('<List /> includes a <Notes /> component', t => {
   const actual = wrapper.find('div.notes').length > 0
 
   // Assert
-  t.is(actual, expected)
+  expect(actual).toBe(expected)
 })
