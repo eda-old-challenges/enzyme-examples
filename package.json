@@ -13,6 +13,11 @@
       "react"
     ]
   },
+  "jest": {
+    "setupFiles": [
+      "./tests/setup-env.js"
+    ]
+  },
   "author": "EDA",
   "license": "ISC",
   "devDependencies": {

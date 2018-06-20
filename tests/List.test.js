@@ -1,12 +1,7 @@
-/* global jest test expect */
 import React from 'react'
-import {configure, mount, shallow, render} from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+import {mount, shallow, render} from 'enzyme'
 
-import './setup-env'
 import List from '../client/components/List'
-
-configure({adapter: new Adapter()})
 
 test('<List /> creates one item for each wombat', () => {
   // Arrange
