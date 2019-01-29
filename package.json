@@ -31,7 +31,8 @@
     "jsdom": "^11.6.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   }
 }
