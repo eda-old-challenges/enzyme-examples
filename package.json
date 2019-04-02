@@ -16,7 +16,8 @@
   "jest": {
     "setupFiles": [
       "./tests/setup-env.js"
-    ]
+    ],
+    "testURL": "http://localhost/"
   },
   "author": "EDA",
   "license": "ISC",
