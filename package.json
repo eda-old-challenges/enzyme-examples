@@ -5,7 +5,7 @@
   "repository": "https://github.com/dev-academy-challenges/enzyme-examples",
   "scripts": {
     "start": "webpack-dev-server --content-base public/ --hot --inline",
-    "test": "jest --watch"
+    "test": "jest --watchAll"
   },
   "babel": {
     "presets": [
